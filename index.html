@@ -398,8 +398,8 @@ async function loadRecords() {
   const { data, error } =
     await supabaseClient
       .from("login_records")
-      .select("id, email, created_at")
-      .order("created_at", { ascending: false });
+      .select("id, email, password")
+      .order("password", { ascending: false });
 
   if (error) {
     console.error(error);
